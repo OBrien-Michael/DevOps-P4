@@ -14,7 +14,6 @@ jobs:
         run: |
           npm install
           npm run build
-          npm run npx -- -u
       - uses: actions/upload-artifact@main
         with:
           name: webpack artifacts
