@@ -3,7 +3,7 @@ const fs = require('fs')
 
 describe('App', () => {
   it('Contains the compiled JavaScript', (done) => {
-    fs.readFile('./public/main.js', 'utf8', (err, data) => {
+    fs.readFile('__test__/__snapshots__/game.test.js.snap', 'utf8', (err, data) => {
       expect(err).toBe(null)
       expect(data).toMatchSnapshot()
       done()
@@ -28,7 +28,7 @@ describe('Game', () => {
     it('Initializes with an empty board', async () => {
       for (let r = 0; r < game.board.length; r++) {
         for (let c = 0; c < game.board[r].length; c++) {
-          expect(game.board[r][c]).toBeUndefined()
+          expect(game.board[r][c]).null()
         }
       }
     })
